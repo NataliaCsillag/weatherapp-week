@@ -13,6 +13,42 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast () {
+    let forecastElement = document.querySelector("#forecast");
+
+    
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function(day) {
+        forecastHTML = forecastHTML + `
+                     <div class="col-2">
+                        <div class="weather-forecast-date">${day}</div>
+                        <img 
+                        src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+                        alt=""
+                        width="44"
+                        />
+                     <div class="weather-forecast-temperature">
+                        <span class="weather-forecast-temperature-max">
+                            6°
+                        </span>
+                        <span class="weather-forecast-temperature-min">
+                            -1°
+                        </span>
+                     </div>
+                     </div>
+                    
+                     `;
+    });
+    
+
+
+forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+
+}
+
 function displayTemperature(response) {
 let cityElement = document.querySelector("#city")    
 let temperatureElement = document.querySelector("#temperature");
@@ -21,6 +57,7 @@ let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 let dateElement = document.querySelector("#date");
 let iconElement = document.querySelector("#icon");
+
 
 celsiusTemperature = response.data.main.temp;
 
@@ -80,3 +117,4 @@ let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayCelsiusTemperature);
 
 search("Gaillard");
+displayForecast()
