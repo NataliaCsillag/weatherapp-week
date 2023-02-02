@@ -53,17 +53,17 @@ li::first-letter {
     cursor: pointer;
 }
 
-.space {
+.overview{
     margin: 10px;
 }
 
-.number {
+.float-left {
     color: rgb(6, 6, 55);
     font-size: 30px;
     font-weight: bold;
 }
 
-.gradus {
+.temperature {
     font-weight: bolder;
     font-style: italic;
     font-size: 15px;
@@ -71,7 +71,7 @@ li::first-letter {
     top: -12px
 }
 
-.rainfix {
+.clearfix-weather-temperature {
     padding: 5px;
     margin-top: 5px;
     display: inline;
